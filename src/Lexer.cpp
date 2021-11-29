@@ -28,7 +28,7 @@ static const Word LE("<=", (int)Tag::LE);
 static const Word GE(">=", (int)Tag::GE);
 static const Word MINUS("minus", (int)Tag::MINUS);
 static const Word TRUE("true", (int)Tag::TRUE);
-static const Word FALSE("flas", (int)Tag::FALSE);
+static const Word FALSE("false", (int)Tag::FALSE);
 static const Word TEMP("t", (int)Tag::TEMP);
 
 static const Word IF("if", (int)Tag::IF);
@@ -88,7 +88,7 @@ void Lexer::readch()
     char ch;
     if (file.get(ch))
         peek = ch;
-    else throw IOException("EOF");
+    else throw IOException("End of file reached");
 }
 
 bool Lexer::readch(const char &ch)
